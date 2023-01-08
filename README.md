@@ -6,17 +6,14 @@
 <html>
 <div class="table-responsive">
     <table class="table table-bordered table-sm table-hover" border="1">
-        <thead>
             <tr>
-                <th style="width:50%;">Transparencias</th>
-                <th style="width:50%;">Videos</th>
+                <th class="col-6" style="width:50vh;">Transparencias</th>
+                <th class="col-6" style="width:50vh;">Videos</th>
             </tr>
-        </thead>
-        <tbody>
             <tr>
                 <td class="align-middle">
-                    <ol class="my-0">
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Introducción al lenguaje C</u> <br></a></b>
+                    <ol>
+                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Introducción al lenguaje C</u></a></b>
                     </ol>
                 </td>
                 <td class="align-middle">
@@ -42,7 +39,6 @@
                     </ol>
                 </td>
             </tr>
-        </tbody>
     </table>
 </div>
 </html>
@@ -62,7 +58,7 @@
         <tbody>
             <tr>
                 <td class="align-middle">
-                    <ol class="my-0">
+                    <ol>
                     <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-instalacion.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Instalación de Ubuntu en VirtualBox</u></a><u><br></u></b>
                     </ol>
                 </td>
@@ -77,7 +73,7 @@
             </tr>
             <tr>
                 <td class="align-middle">
-                    <ol class="my-0">
+                    <ol>
                     <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-fichydirs.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Uso de ficheros y directorios en Ubuntu</u> <br></a></b>
                     </ol>
                 </td>
