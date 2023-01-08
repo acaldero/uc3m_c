@@ -1,45 +1,34 @@
 ## Materiales usados en ARCOS.INF.UC3M.ES con Licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) 
 
 
-## Contenidos
+## Resumen de contenidos 
 
 <html>
 <div class="table-responsive">
     <table class="table table-bordered table-sm table-hover" border="1">
             <tr>
                 <th class="col-4" style="width:33vh;">Tema</th>
-                <th class="col-4" style="width:33vh;">Transparencias</th>
-                <th class="col-4" style="width:33vh;">Videos</th>
+                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation"> Transparencias</th>
+                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation"> Videos</th>
             </tr>
             <tr>
                 <td class="align-middle">
                 Introducción al <br>lenguaje C
                 </td>
                 <td class="align-middle">
-                    <ol>
                     <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Introducción al lenguaje C</u></a></b>
-                    </ol>
                 </td>
                 <td class="align-middle">
                     <ol>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=EFEj13YU7I0&amp;feature=related" target="_blank">Preprocesador</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=-P2C4g6xZeE&amp;feature=related" target="_blank">Comentarios</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=B_7jBxe_VOQ&amp;feature=related" target="_blank">Bibliotecas</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=1Hz19T5lRP8&amp;feature=related" target="_blank">Tipos de datos básicos, variables y constantes</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=ux_J98WmjPA&amp;feature=related" target="_blank">Sentencias de control</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=o5Jl_Dzga88&amp;feature=related" target="_blank">Array y Struct</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=mS0gnJ-su_Y&amp;feature=related" target="_blank">Funciones</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=iQF-2vUNEJk&amp;feature=related" target="_blank">Punteros (1/2)</a></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=m6sdKI3zhKg&amp;feature=related" target="_blank">Punteros (2/2)</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=EFEj13YU7I0&amp;feature=related" target="_blank">Preprocesador</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=-P2C4g6xZeE&amp;feature=related" target="_blank">Comentarios</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=B_7jBxe_VOQ&amp;feature=related" target="_blank">Bibliotecas</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=1Hz19T5lRP8&amp;feature=related" target="_blank">Tipos de datos básicos, variables y constantes</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=ux_J98WmjPA&amp;feature=related" target="_blank">Sentencias de control</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=o5Jl_Dzga88&amp;feature=related" target="_blank">Array y Struct</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=mS0gnJ-su_Y&amp;feature=related" target="_blank">Funciones</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=iQF-2vUNEJk&amp;feature=related" target="_blank">Punteros (1/2)</a></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=m6sdKI3zhKg&amp;feature=related" target="_blank">Punteros (2/2)</a></li>
                     </ol>
                 </td>
             </tr>
@@ -48,42 +37,33 @@
                     Introdución a <br>Linux/Ubuntu 18.04 LTS
                 </td>
                 <td class="align-middle">
-                    <ol>
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-instalacion.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Instalación de Ubuntu en VirtualBox</u></a><u><br></u></b>
-                    </ol>
+                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-instalacion.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Instalación de Ubuntu en VirtualBox</u></a><u></u></b>
                 </td>
                 <td class="align-middle">
                     <ol>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=MwfB9lnB0_A&amp;feature=related" target="_blank">Instalación en VirtualBox</a><br></li>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=0An_9Kcv62o&amp;feature=related" target="_blank">Instalación del entorno de desarrollo C</a><br></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=MwfB9lnB0_A&amp;feature=related" target="_blank">Instalación en VirtualBox</a> </li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=0An_9Kcv62o&amp;feature=related" target="_blank">Instalación del entorno de desarrollo C</a></li>
                     </ol>
                 </td>
             </tr>
             <tr>
                 <td class="align-middle">
-                    <ol>
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-fichydirs.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Uso de ficheros y directorios en Ubuntu</u> <br></a></b>
-                    </ol>
+                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-fichydirs.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Uso de ficheros y directorios en Linux</u> </a></b>
                 </td>
                 <td class="align-middle">
                     <ol>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation"><a href="http://www.youtube.com/watch?embed=no&amp;v=2U5bJKUX_6s&amp;feature=related"
-                                target="_blank">El sistema de ficheros desde línea de mandatos</a><br></li>
+                        <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=2U5bJKUX_6s&amp;feature=related"
+                                target="_blank">El sistema de ficheros desde línea de mandatos</a></li>
                     </ol>
                 </td>
             </tr>
             <tr>
                 <td class="align-middle">
-                    <ol class="my-0">
-                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-procesos.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Uso de procesos en Ubuntu</u> <br></a></b>
-                    </ol>
+                    <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w0-ubuntu-procesos.pdf"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation">&nbsp;<u>Uso de procesos en Linux</u> </a></b>
                 </td>
                 <td class="align-middle">
                     <ol>
-                        <li><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation">
-                            <a href="http://www.youtube.com/watch?embed=no&amp;v=ym3BeppIE8I&amp;feature=related" target="_blank">Gestión de procesos desde línea de mandatos <br></a></li>
+                        <li>  <a href="http://www.youtube.com/watch?embed=no&amp;v=ym3BeppIE8I&amp;feature=related" target="_blank">Gestión de procesos desde línea de mandatos </a></li>
                     </ol>
                 </td>
             </tr>
@@ -99,22 +79,22 @@
 <ol>
 <li><a href="https://youtu.be/EFEj13YU7I0">El preprocesador</a>
 <ol type="a">
-<li><a href="https://youtu.be/EFEj13YU7I0&t=0m00s"> hola mundo</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=0m52s"> ¿por qué preprocesador?</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=2m08s"> ¿qué es el preprocesador?</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=3m28s"> #include</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=4m05s"> #define (constante)</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=8m30s"> #if/#endif</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=10m38s"> #define (macro)</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=12m21s"> # (token a string)</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=13m33s"> ## (concatenar)</a>
-<li><a href="https://youtu.be/EFEj13YU7I0&t=13m55s"> #error</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=0m00s">Recordar el "hola mundo"</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=0m52s">¿Por qué preprocesador?</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=2m08s">¿Qué es el preprocesador?</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=3m28s">#include</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=4m05s">#define (constante)</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=8m30s">#if + #endif</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=10m38s">#define (macro)</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=12m21s"># (token a string)</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=13m33s">## (concatenar)</a>
+<li><a href="https://youtu.be/EFEj13YU7I0&t=13m55s">#error</a>
 </ol>
 
 
 <li><a href="https://youtu.be/-P2C4g6xZeE">Los comentarios</a>
 <ol type="a">
-<li><a href="https://youtu.be/-P2C4g6xZeE&t=0m">Repaso y resumen a principales aspectos del lenguaje C: comentarios</a>
+<li><a href="https://youtu.be/-P2C4g6xZeE&t=0m">Comentarios en C</a>
 </ol>
 
 
@@ -123,7 +103,7 @@
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m00s">Motivación</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m28s">#include</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m45s">Ejemplo #include</a>
-<li><a href="https://youtu.be/B_7jBxe_VOQ&t=1m54s">No Java-package o Python-modole</a>
+<li><a href="https://youtu.be/B_7jBxe_VOQ&t=1m54s">No Java-package o Python-module</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=2m34s">Ejemplo de biblioteca</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=5m04s">Solucionar las multiples inclusiones</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=6m58s">Bibliotecas estáticas y dinámicas</a>
