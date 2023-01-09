@@ -77,7 +77,10 @@
 
 
 <ol>
-<li><a href="https://youtu.be/EFEj13YU7I0">El preprocesador</a>
+
+<details open>
+<summary>1. El preprocesador</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/EFEj13YU7I0&t=0m00s">Recordar el "hola mundo"</a>
 <li><a href="https://youtu.be/EFEj13YU7I0&t=0m52s">¿Por qué preprocesador?</a>
@@ -90,15 +93,23 @@
 <li><a href="https://youtu.be/EFEj13YU7I0&t=13m33s">## (concatenar)</a>
 <li><a href="https://youtu.be/EFEj13YU7I0&t=13m55s">#error</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/-P2C4g6xZeE">Los comentarios</a>
+<details open>
+<summary>2. Los comentarios</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/-P2C4g6xZeE&t=0m">Comentarios en C</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m">Bibliotecas en C</a>
+<details open>
+<summary>3. Bibliotecas en C</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m00s">Motivación</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m28s">#include</a>
@@ -110,9 +121,13 @@
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=7m42s">Ejemplo de bibliotecas estática</a>
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=10m05s">Ejemplo de bibliotecas dinámica</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/1Hz19T5lRP8&t=0m">Tipos de datos básicos.</a>
+<details open>
+<summary>4. Tipos de datos básicos</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/1Hz19T5lRP8&t=0m00s">char, int, long, float y double</a>
 <li><a href="https://youtu.be/1Hz19T5lRP8&t=2m21s">enum y ¿bool?</a>
@@ -125,18 +140,26 @@
 <li><a href="https://youtu.be/1Hz19T5lRP8&t=18m02s">Casting implícito</a>
 <li><a href="https://youtu.be/1Hz19T5lRP8&t=19m11s">Casting explícito</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/ux_J98WmjPA">Sentencias de control</a>
+<details open>
+<summary>5. Sentencias de control</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/ux_J98WmjPA&t=0m00s">Sentencias de control</a>
 <li><a href="https://youtu.be/ux_J98WmjPA&t=0m45s">If/if-else/switch</a>
 <li><a href="https://youtu.be/ux_J98WmjPA&t=8m20s">For/while/do-until</a>
 <li><a href="https://youtu.be/ux_J98WmjPA&t=11m47s">Continue/break/goto</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/o5Jl_Dzga88&t=0m">Vectores y estructuras</a>
+<details open>
+<summary>6. Vectores y estructuras</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/o5Jl_Dzga88&t=0m00s">[] vs struct</a>
 <li><a href="https://youtu.be/o5Jl_Dzga88&t=2m15s">sizeof(struct)</a>
@@ -148,9 +171,13 @@
 <li><a href="https://youtu.be/o5Jl_Dzga88&t=13m27s">cadenas de caracteres</a>
 <li><a href="https://youtu.be/o5Jl_Dzga88&t=19m05s">argc y argv</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/mS0gnJ-su_Y&t=0m">Funciones</a>
+<details open>
+<summary>7. Funciones</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/mS0gnJ-su_Y&t=0m00s">Inspiración matemática</a>
 <li><a href="https://youtu.be/mS0gnJ-su_Y&t=2m15s">Aproximación procedimental</a>
@@ -163,9 +190,13 @@
 <li><a href="https://youtu.be/mS0gnJ-su_Y&t=12m40s">Constantes y variables tipo función</a>
 <li><a href="https://youtu.be/mS0gnJ-su_Y&t=15m05s">Funciones como parámetros</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/iQF-2vUNEJk">Introducción a punteros (1/2)</a>
+<details open>
+<summary>8. Introducción a punteros (1/2)</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/iQF-2vUNEJk&t=0m00s">Dirección, valor y tamaño</a>
 <li><a href="https://youtu.be/iQF-2vUNEJk&t=4m41s">Puntero</a>
@@ -175,9 +206,13 @@
 <li><a href="https://youtu.be/iQF-2vUNEJk&t=14m36s">Problemas con punteros</a>
 <li><a href="https://youtu.be/iQF-2vUNEJk&t=16m41s">Mejor inicializar a NULL</a>
 </ol>
+</ol>
+</details>
 
 
-<li><a href="https://youtu.be/m6sdKI3zhKg">Introducción a punteros (2/2)</a>
+<details open>
+<summary>9. Introducción a punteros (2/2)</summary>
+<ol>
 <ol type="a">
 <li><a href="https://youtu.be/m6sdKI3zhKg&t=0m00s">Puntero auxiliar como comodín</a>
 <li><a href="https://youtu.be/m6sdKI3zhKg&t=5m19s">Memoria dinámica</a>
@@ -185,7 +220,9 @@
 <li><a href="https://youtu.be/m6sdKI3zhKg&t=21m43s">Aritmética de punteros</a>
 <li><a href="https://youtu.be/m6sdKI3zhKg&t=23m05s">void *</a>
 </ol>
+</ol>
+</details>
+
 
 </ol>
-
 
