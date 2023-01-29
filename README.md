@@ -39,8 +39,9 @@
 </html>
 
 * Material recomendado:
-  * Libro en PDF: ["Introducción al lenguaje de programación C", Félix Garcia Carballeira, 2022](https://www.arcos.inf.uc3m.es/fgarcia/wp-content/uploads/sites/4/2020/02/guiaC-v2.pdf)
-  * Página web:   ["C for Python programmers", Carl Burch and Hendrix College, 2011](http://www.cburch.com/books/cpy/index.html)
+  * Libro en PDF: ["Introducción al lenguaje de programación C", Félix Garcia Carballeira](https://www.arcos.inf.uc3m.es/fgarcia/wp-content/uploads/sites/4/2020/02/guiaC-v2.pdf)
+  * Página web:   ["C for Python programmers", Carl Burch and Hendrix College](http://www.cburch.com/books/cpy/index.html)
+  * Página web:   ["Common C Errors", Paul Carter](http://pacman128.github.io/internal/common_c_errors/)
 
 
 ## Introducción al lenguaje C
