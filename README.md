@@ -11,15 +11,15 @@
 <div class="table-responsive">
     <table class="table table-bordered table-sm table-hover" border="1">
             <tr>
-                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/core/1614226998/f/pdf-24" class="iconlarge activityicon" alt="Icono PDF" role="presentation"> Transparencias</th>
-                <th class="col-4" style="width:33vh;"><img src="https://aulaglobal.uc3m.es/theme/image.php/boost/url/1615523185/icon" class="iconlarge activityicon" alt="icono enlace" role="presentation"> Videos</th>
+                <th class="col-4" style="width:33vh;">Transparencias</th>
+                <th class="col-4" style="width:33vh;">Videos</th>
             </tr>
             <tr>
                 <td class="align-middle">
                     <b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf"><u>Introducción al lenguaje C</u></a></b>
                 </td>
                 <td class="align-middle">
-                    <ol>
+                    <ol type="1">
                         <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=EFEj13YU7I0&amp;feature=related" target="_blank">Preprocesador</a></li>
                         <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=-P2C4g6xZeE&amp;feature=related" target="_blank">Comentarios</a></li>
                         <li> <a href="http://www.youtube.com/watch?embed=no&amp;v=B_7jBxe_VOQ&amp;feature=related" target="_blank">Bibliotecas</a></li>
@@ -38,9 +38,9 @@
 </ul>
 </html>
 
-* Libro recomendado (en PDF):
-  * ["Introducción al lenguaje de programación C", Félix Garcia Carballeira, 2022](https://www.arcos.inf.uc3m.es/fgarcia/wp-content/uploads/sites/4/2020/02/guiaC-v2.pdf)
-
+* Material recomendado:
+  * Libro en PDF: ["Introducción al lenguaje de programación C", Félix Garcia Carballeira, 2022](https://www.arcos.inf.uc3m.es/fgarcia/wp-content/uploads/sites/4/2020/02/guiaC-v2.pdf)
+  * Página web:   ["C for Python programmers", Carl Burch and Hendrix College, 2011](http://www.cburch.com/books/cpy/index.html)
 
 
 ## Introducción al lenguaje C
