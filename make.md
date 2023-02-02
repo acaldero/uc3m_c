@@ -54,6 +54,18 @@ Para usar el archivo Makefile hay que ejecutar:
 make
 ```
 
+El esqueleto del Makefile anterior es:
+```bash
+targets: prerequisites
+	command 1
+	command 2
+	command 3
+```
+Donde para obtener un objetivo (targets) se indica 2 elementos:
+  * Prerequisitos (prerequisites): que son objetivos que hay que cumplir primero
+  * Mandatos (command 1/2/3): una vez se tengan los prerequisitos la forma de tener el objetivo es ejecutar los mandatos uno detrás de otro
+
+
 ### Compilación con Makefile (segunda versión con variables)
 
 Archivo Makefile:
@@ -78,20 +90,29 @@ Archivo Makefile:
 ```bash
 CC=gcc
 CFLAGS=-g -Wall
-
-%.o : %.c
-  $(CC) $(CFLAGS) -c $< -o $@
+OBJS=main.o lib_hola.o
 
 .PHONY: all clean
 
-all: lib_hola.o main.o
-  $(CC) $(CFLAGS) -o main main.o lib_hola.o
-  
-clean: lib_hola.o main.o
-  rm -fr lib_hola.o main.o
+all: $(OBJS)
+  $(CC) $(CFLAGS) -o main $(OBJS)
+
+%.o : %.c
+   @echo "Compiling... $<" 
+   $(CC) $(CFLAGS) -c $< -o $@
+
+clean: $(OBJS)
+   @echo "Removing $(OBJS)..."
+   rm -fr $(OBJS)
 ```
 
 Para usar el archivo Makefile hay que ejecutar:
 ```bash
 make
 ```
+
+## Material recomendado
+  * https://makefiletutorial.com/
+  * https://www3.nd.edu/~zxu2/acms60212-40212/Makefile.pdf
+  
+
