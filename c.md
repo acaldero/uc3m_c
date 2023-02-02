@@ -9,7 +9,7 @@
 
 <details open>
 <summary>1. El preprocesador</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page4"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=4"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/EFEj13YU7I0&t=0m00s">Recordar el "hola mundo"</a>
@@ -29,7 +29,7 @@
 
 <details open>
 <summary>2. Los comentarios</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page17"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=17"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/-P2C4g6xZeE&t=0m">Comentarios en C</a>
@@ -40,7 +40,7 @@
 
 <details open>
 <summary>3. Bibliotecas en C</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page27"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=27"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/B_7jBxe_VOQ&t=0m00s">Motivación</a>
@@ -59,7 +59,7 @@
 
 <details open>
 <summary>4. Tipos de datos básicos</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page43"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=43"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/1Hz19T5lRP8&t=0m00s">char, int, long, float y double</a>
@@ -79,7 +79,7 @@
 
 <details open>
 <summary>5. Sentencias de control</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page70"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=70"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/ux_J98WmjPA&t=0m00s">Sentencias de control</a>
@@ -93,7 +93,7 @@
 
 <details open>
 <summary>6. Vectores y estructuras</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page57"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=57"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/o5Jl_Dzga88&t=0m00s">[] vs struct</a>
@@ -112,7 +112,7 @@
 
 <details open>
 <summary>7. Funciones</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page83"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=83"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/mS0gnJ-su_Y&t=0m00s">Inspiración matemática</a>
@@ -132,7 +132,7 @@
 
 <details open>
 <summary>8. Introducción a punteros (1/2)</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page113"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=113"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/iQF-2vUNEJk&t=0m00s">Dirección, valor y tamaño</a>
@@ -149,7 +149,7 @@
 
 <details open>
 <summary>9. Introducción a punteros (2/2)</summary>
-<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page135"><u>Transparencias</u></a></b>
+<b><a href="https://acaldero.github.io/uc3m_c/slides/clase_w1-introduccionc.pdf#page=135"><u>Transparencias</u></a></b>
 <ol>
 <ol type="a">
 <li><a href="https://youtu.be/m6sdKI3zhKg&t=0m00s">Puntero auxiliar como comodín</a>
