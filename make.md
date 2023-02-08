@@ -95,12 +95,39 @@ make
   CFLAGS=-g -Wall
   OBJS=main.o lib_hola.o
 
+  all: $(OBJS)
+  	$(CC) $(CFLAGS) -o main $(OBJS)
+  
+  lib_hola.o: lib_hola.c
+  	$(CC) $(CFLAGS) -c lib_hola.c -o lib_hola.o
+  
+  main.o: main.c
+  	$(CC) $(CFLAGS) -c main.c     -o main.o
+	
+  clean: $(OBJS)
+  	rm -fr $(OBJS)
+  ```
+
+Para usar el archivo Makefile se recomienda ejecutar:
+```bash
+make clean; make
+```
+
+
+## Compilación con Makefile (cuarta versión con reglas especiales)
+
+* Archivo Makefile:
+  ```bash
+  CC=gcc
+  CFLAGS=-g -Wall
+  OBJS=main.o lib_hola.o
+
   .PHONY: all clean
 
   all: $(OBJS)
   	$(CC) $(CFLAGS) -o main $(OBJS)
 
-  %.o : %.c
+  %.o: %.c
   	@echo "Compiling... $<" 
   	$(CC) $(CFLAGS) -c $< -o $@
 
@@ -113,6 +140,21 @@ Para usar el archivo Makefile se recomienda ejecutar:
 ```bash
 make clean; make
 ```
+
+Hay dos reglas especiales:
+* La regla de ignorar ficheros que se llamen all y clean (de otra forma hacer un make all si hay un archivo all supone que se cumple la regla y no se ejecuta):
+  ```bash
+    .PHONY: all clean
+  ```
+* Usar una única regla para indicar que cada archivo .o (%.o) precisa un archivo .c asociado (%.c) y se compila con ```-c $< -o $@``` donde ```$<``` es el nombre del archivo .c y ```$@``` es el nombre del archivo .o:
+  ```bash
+    %.o: %.c
+    	@echo "Compiling... $<" 
+  	$(CC) $(CFLAGS) -c $< -o $@
+  ```
+
+
+
 
 ## Material recomendado
   * https://makefiletutorial.com/
