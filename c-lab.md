@@ -113,7 +113,7 @@ Usaremos el archivo:
      /* rellenar personas con valores por defecto (persona 0,1...) */
      for (i=0; i<N_PERSONAS; i++)
      {
-        sprintf("persona %d", personas[i].name, personas[i].id) ;
+        sprintf("persona %d", personas[i].nombre, personas[i].id) ;
         personas[i].id = i ;
      }
 
@@ -121,7 +121,7 @@ Usaremos el archivo:
      for (i=0; i<N_PERSONAS; i++)
      {
         printf(" * Persona '%s' con id '%d'.\n",
-                           personas[i].name,
+                           personas[i].nombre,
                                        personas[i].id) ;
      }
 
@@ -211,19 +211,17 @@ Estados en el uso recomendado de un puntero:
 ```mermaid
 stateDiagram-v2
     direction LR
-    state "1. No inicializado"                            as px_xx
-    state "2. Inicializado a NULL"                        as px_null
-    state "3. Apunta a dirección de memoria de variable"  as px_atx
-    state "4. Apunta a dirección de memoria de malloc"    as px_alloc
+    state "px=¿?"              as px_xx
+    state "px=NULL"            as px_null
+    state "px=&x"              as px_atx
+    state "px=malloc(size)"    as px_alloc
 
-    [*]       --> px_xx
-    px_xx     --> px_null
-    px_null   --> px_atx
-    px_atx    --> px_null
-    px_null   --> px_alloc
-    px_alloc  --> px_null
-    px_alloc  --> px_alloc
-    px_atx    --> px_alloc
-    px_null   --> [*]
+    px_xx     --> px_null:  px = NULL
+    px_null   --> px_atx:   px = &x
+    px_atx    --> px_null:  px = NULL
+    px_null   --> px_alloc: px = malloc(size_en_bytes)
+    px_alloc  --> px_null:  free(px) + px = NULL
+    px_alloc  --> px_alloc: px_aux = realloc(px, nuevo_size_en_bytes) + if (px_aux != NULL) px = px_aux
+    px_atx    --> px_alloc: px = malloc(size_en_bytes)
 ```
 
