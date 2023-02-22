@@ -165,12 +165,12 @@ Se podría usar también:
      /* Imprimir personas */
      for (i=0; i<N_PERSONAS; i++)
      {
-        printf(" * Persona '%s' que tiene un id '%d'.\n",
-/*                          ^                    ^                     */
-/*                          |                    |                     */
+        printf(" * Persona '%s' que tiene un id '%d'.\n", 
+        /*                  ^                    ^         */
+        /*                  |                    |         */
                            personas[i].nombre,
-/*                                               |                     */
-                                                personas[i].id) ;
+        /*                                       |         */                           
+                                                 personas[i].id) ;
      }
 
      return 0 ;
@@ -198,21 +198,21 @@ A recordar:
       /* Definir variables */
       int   i ;
       int *pi ;     /* (1) */
-//    int &ri = i ; /* (2) <- solo en C++ */
+  //  int &ri = i ; /* (2) <- solo en C++ */
 
 
       /* Modificar valor de variables */
        i  = 5 ;
        pi = &i ;     /* (4) */
       *pi = 5 ;      /* (3) */
-//     ri = 5 ;      /* <- solo en C++ */
+  //   ri = 5 ;      /* <- solo en C++ */
 
 
       /* Consultar valor de variables */
       printf("  i = %d\n",   i) ;
       printf(" pi = %x\n",  pi) ;
       printf("*pi = %d\n", *pi) ; /* (3) */
-//    printf(" ri = %d\n",  ri) ; /* <- solo en C++ */
+  //  printf(" ri = %d\n",  ri) ; /* <- solo en C++ */
 
       // Una variable puntero es un variable que guarda la dirección de una posición de memoria (similar a "unsigned long int")
       printf(" pi = %x\n",  pi) ;
@@ -279,9 +279,9 @@ Información recomendada:
       earray[2] = 3 ;
       earray[3] = 4 ;
       earray[4] = 5 ;
-/* CUIDADO:
+  /* CUIDADO:
       earray[5] = 5 ;  !!  fuera de rango
-*/
+  */
 
       // <- en este punto de ejecución:
       //    * darray  vale NULL
@@ -305,10 +305,10 @@ Información recomendada:
       darray[0] = 1 ;
       darray[1] = 2 ;
 
-/* CUIDADO:
+  /* CUIDADO:
       darray    = 1 ;  !!  darray almacena la dirección 0x1 de memoria pero no se guarda 1 en el primer elemento
       darray[2] = 3 ;  !!  fuera de rango
-*/
+  */
 
 
       /* 
@@ -322,9 +322,9 @@ Información recomendada:
       printf("Dinámico:\n") ;
       imprimir(darray,  n_eltos) ;
 
-/* CUIDADO:
+  /* CUIDADO:
       imprimir(&darray, n_eltos) ;  !! dirección de la variable que guarda la dirección del primer elemento...
-*/
+  */
 
       /* e) se libera la memoria cuando ya NO sea necesario volver a usarse */
       free(darray) ;
