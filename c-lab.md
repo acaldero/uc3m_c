@@ -350,7 +350,7 @@ A recordar:
 * En Lenguaje C al definir un array estático, solo su nombre (sin corchetes []) representa la dirección de memoria del primer elemento (una dirección de memoria constante).
 * Estados en el uso recomendado de un puntero:
   ```mermaid
-stateDiagram-v2
+    stateDiagram-v2
     direction LR
     state "px=¿?"              as px_xx
     state "px=NULL"            as px_null
@@ -510,4 +510,57 @@ Como ejemplo de paso por parámetros de punteros, usaremos el siguiente archivo:
 
 **Información recomendada**:
 * [Paso de parámetros a funciones (youtube)](https://youtu.be/mS0gnJ-su_Y&t=7m33s)
+
+
+
+## 6.- Archivos de cabecera y proyectos de varios archivos
+
+Como ejemplo usaremos estos tres archivos:
+
+* lib_hola.h
+  ```c
+  #ifndef LIB_HOLA
+  #define LIB_HOLA
+  
+      void di_hola ( void ) ;
+      
+  #endif
+  ```
+
+* lib_hola.c
+  ```c
+  #include "lib_hola.h"
+  
+  void di_hola ( void ) 
+  {
+     printf("Hola Mundo...\n") ;
+  }
+  ```
+
+* main.c
+  ```c
+  #include "lib_hola.h"
+  
+  int main ( int argc, char *argv[] )
+  {
+     di_hola() ;
+     
+     return 0 ;
+  }
+  ```
+  
+  
+Para compilar los anteriores archivos hay que ejecutar:
+
+```bash
+gcc -g -Wall -c lib_hola.c -o lib_hola.o
+gcc -g -Wall -c main.c     -o main.o
+gcc -g -Wall -o main main.o lib_hola.o
+```
+
+**Información recomendada**:
+  * [Ejemplo de biblioteca (youtube)](https://youtu.be/B_7jBxe_VOQ&t=2m34s)
+  * [Solucionar las multiples inclusiones (youtube)](https://youtu.be/B_7jBxe_VOQ&t=5m04s)
+  * [Ejemplo de bibliotecas estática (youtube)](https://youtu.be/B_7jBxe_VOQ&t=7m42s)
+  * [Ejemplo de bibliotecas dinámica (youtube)](https://youtu.be/B_7jBxe_VOQ&t=10m05s)
 
