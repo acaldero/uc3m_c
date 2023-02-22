@@ -18,8 +18,8 @@ Para tener acceso a una máquina con Linux se recuerda que el Laboratorio del De
 
 El lenguaje C estándar es compilado (y no interpretado como Python) por lo que a partir del código fuente hay que primero compilar para generar un código ejecutable que es el que se ejecuta.
 
-* Como ejemplo para compilar, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo para compilar, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   
@@ -30,22 +30,22 @@ El lenguaje C estándar es compilado (y no interpretado como Python) por lo que 
   }
   ```
 
-* Para compilar usaremos:
+Para compilar usaremos:
 
 ```bash
 gcc -g -Wall -c main.c -o main.o
 gcc -g -Wall -o main      main.o
 ```
 
-A la hora de compilar se utiliza los siguientes modificadores (flags):
-* "-g" para añadir información de depuración que es útil si se usa un depurador
-* "-Wall" para que muestre todas las advertencias (Warnings) de posibles problemas que detecte el compilador
+Aclaraciones:
+* A la hora de compilar se utiliza los siguientes modificadores (flags):
+  * "-g" para añadir información de depuración que es útil si se usa un depurador
+  * "-Wall" para que muestre todas las advertencias (Warnings) de posibles problemas que detecte el compilador
+* Se podría usar también:
+  * "-Werror" para indicar que trate todas las advertencias (warnings) como errores.
+  * "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
 
-Se podría usar también:
-* "-Werror" para indicar que trate todas las advertencias (warnings) como errores.
-* "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
-
-* Para ejecutar usaremos:
+Para ejecutar usaremos:
 
 ```bash
 ./main
@@ -55,8 +55,8 @@ Se podría usar también:
 
 ## 2.- Sentencias de control de flujo en C
 
-* Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   
@@ -89,7 +89,8 @@ Se podría usar también:
   }
   ```
 
-* Hay que recordar para alternar:
+Aclaraciones:
+* Hay que recordar para "alternar" entre opciones se puede usar:
   * if-then-else:
     ```c
     if ("condición cierta o falsa")  // 0 es falso y resto es verdadero
@@ -101,7 +102,7 @@ Se podría usar también:
       "si es falsa..."
     }
     ```
-* Hay que recordar para iterar:
+* Hay que recordar para "iterar" en un bucle se puede usar:
   * for (de 0 a n veces):
     ```c
     for ("valores iniciales de contadores"; "condición de mantenimiento en el bucle"; "actualización de contadores")
@@ -129,15 +130,15 @@ Se podría usar también:
     while ("condición de mantenimiento en el bucle")
     ```
 
-* Información recomendada:
-  * ["Sentencias de control (youtube)](http://www.youtube.com/watch?embed=no&v=ux_J98WmjPA&feature=related)
+**Información recomendada**:
+  * [Sentencias de control (youtube)](http://www.youtube.com/watch?embed=no&v=ux_J98WmjPA&feature=related)
 
 
 
 ## 3.- Uso de estructuras (struct) en C
 
-* Como ejemplo de (array de) structs, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo de (array de) structs, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   #include <stdlib.h>
@@ -177,18 +178,18 @@ Se podría usar también:
   }
   ```
 
-Información recomendada:
-* ["Array y Struct en C (youtube)](http://www.youtube.com/watch?embed=no&v=o5Jl_Dzga88&feature=related)
-
-A recordar:
+Aclaraciones:
 * En Lenguaje C al definir un array, solo su nombre (sin corchetes []) representa la dirección de memoria del primer elemento (una dirección de memoria constante que apunta a un elemento variable).
+
+**Información recomendada**:
+* [Array y Struct en C (youtube)](http://www.youtube.com/watch?embed=no&v=o5Jl_Dzga88&feature=related)
 
 
 
 ## 4.- Uso de punteros I (qué es un puntero)
 
-* Como ejemplo inicial de qué representa un puntero en C, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo inicial de qué representa un puntero en C, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   #include <stdlib.h>
@@ -214,10 +215,12 @@ A recordar:
       printf("*pi = %d\n", *pi) ; /* (3) */
   //  printf(" ri = %d\n",  ri) ; /* <- solo en C++ */
 
-      // Una variable puntero es un variable que guarda la dirección de una posición de memoria (similar a "unsigned long int")
+      // Una variable puntero es un variable que guarda la dirección de una posición de memoria,
+      // se parece mucho a una variable del tipo "unsigned long int"
       printf(" pi = %x\n",  pi) ;
       printf(" &i = %d\n",  &i) ; /* (4) */
-      // Una variable puntero a su vez se guarda en una posición de memoria (se puede aplicar el operador & para conocer dicha dirección)
+      // Una variable puntero a su vez se guarda en una posición de memoria
+      // (se puede aplicar el operador & para conocer dicha dirección)
       printf("&pi = %x\n", &pi) ; /* (4) */
 
       return 0 ;
@@ -232,16 +235,16 @@ A recordar:
 | definición variable  | (1) puntero a...   | (2) referencia a...  |
 | uso de variable      | (3) acceder a...   | (4) dirección de...  |
 
-Información recomendada:
-* ["Introducción a punteros  I (youtube)](http://www.youtube.com/watch?embed=no&v=iQF-2vUNEJk&feature=related)
-* ["Introducción a punteros II (youtube)](http://www.youtube.com/watch?embed=no&v=m6sdKI3zhKg&feature=related)
+**Información recomendada**:
+* [Introducción a punteros  I (youtube)](http://www.youtube.com/watch?embed=no&v=iQF-2vUNEJk&feature=related)
+* [Introducción a punteros II (youtube)](http://www.youtube.com/watch?embed=no&v=m6sdKI3zhKg&feature=related)
 
 
 
 ## 4.- Uso de punteros II (memoria dinámica)
 
-* Como ejemplo de uso de punteros para memoria dinámica, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo de uso de punteros para memoria dinámica, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   #include <stdlib.h>
@@ -363,9 +366,9 @@ stateDiagram-v2
     px_atx    --> px_alloc: px = malloc(size_en_bytes)
   ```
 
-Información recomendada:
-* ["Introducción a punteros  I (youtube)](http://www.youtube.com/watch?embed=no&v=iQF-2vUNEJk&feature=related)
-* ["Introducción a punteros II (youtube)](http://www.youtube.com/watch?embed=no&v=m6sdKI3zhKg&feature=related)
+**Información recomendada**:
+* [Introducción a punteros  I (youtube)](http://www.youtube.com/watch?embed=no&v=iQF-2vUNEJk&feature=related)
+* [Introducción a punteros II (youtube)](http://www.youtube.com/watch?embed=no&v=m6sdKI3zhKg&feature=related)
 
 
 
@@ -384,14 +387,15 @@ Es importante tener presente que en lenguaje C:
   * Por tanto, **TODO argumento se pasa por valor**.
 * El nombre de un array de tipo X equivale a la dirección de memoria donde se guarda el primer elemento de tipo X, por tanto el argumento formal puede ser un puntero a X.
   ```c
-  int f(char *a4, char a5[]) ;
-  ...
+        int f(char *a4, char a5[]) ;
+       //           ^        ^
+       //           |        |
   int ret = f(array_char, "Hola") ;
   ```
 
 
-* Como ejemplo de paso por parámetros, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo de paso por parámetros, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   #include <stdlib.h>
@@ -456,15 +460,12 @@ Es importante tener presente que en lenguaje C:
   }
   ```
 
-A recordar:
-* En lenguaje C TODO se pasa por valor.
-
-Información recomendada:
-* ["Paso de parámetros a funciones (youtube)](https://youtu.be/mS0gnJ-su_Y&t=7m33s)
+**Información recomendada**:
+* [Paso de parámetros a funciones (youtube)](https://youtu.be/mS0gnJ-su_Y&t=7m33s)
 
 
-* Como ejemplo de paso por parámetros de punteros, usaremos el siguiente archivo:
-  * main.c
+Como ejemplo de paso por parámetros de punteros, usaremos el siguiente archivo:
+* main.c
   ```c
   #include <stdio.h>
   #include <stdlib.h>
@@ -507,9 +508,6 @@ Información recomendada:
   }
   ```
 
-A recordar:
-* En lenguaje C TODO se pasa por valor.
-
-Información recomendada:
-* ["Paso de parámetros a funciones (youtube)](https://youtu.be/mS0gnJ-su_Y&t=7m33s)
+**Información recomendada**:
+* [Paso de parámetros a funciones (youtube)](https://youtu.be/mS0gnJ-su_Y&t=7m33s)
 
