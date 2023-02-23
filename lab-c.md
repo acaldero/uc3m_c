@@ -456,7 +456,7 @@ A recordar en C:
     px_atx    --> px_null:  px = NULL
     px_null   --> px_alloc: px = malloc(size_en_bytes)
     px_alloc  --> px_null:  free(px) + px = NULL
-    px_alloc  --> px_alloc: px_aux = realloc(px, nuevo_size_en_bytes) + if (px_aux != NULL) px = px_aux
+    px_alloc  --> px_alloc: px_aux = realloc(px, nuevo_size_en_bytes) +\n if (px_aux != NULL) px = px_aux
     px_atx    --> px_alloc: px = malloc(size_en_bytes)
   ```
 
@@ -479,7 +479,8 @@ Es importante tener presente que en lenguaje C:
   ```
 * **En el momento de la llamada a una función se hace una asignación (copia) de los argumentos reales a los formales**.
   * Por tanto, **TODO argumento se pasa por valor**.
-* El nombre de un array de tipo X equivale a la dirección de memoria donde se guarda el primer elemento de tipo X, por tanto el argumento formal puede ser un puntero a X.
+* El nombre de un array de tipo X equivale a la dirección de memoria donde se guarda el primer elemento de tipo X
+  * Por tanto, el argumento formal para un array de tipo X puede ser un puntero a X.
   ```c
         int f(char *a4, char a5[]) ;
        //           ^        ^
