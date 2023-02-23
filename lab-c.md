@@ -18,6 +18,19 @@ Para tener acceso a una máquina con Linux se recuerda que el Laboratorio del De
 
 El lenguaje C estándar es compilado (y no interpretado como Python) por lo que a partir del código fuente hay que primero compilar para generar un código ejecutable que es el que se ejecuta.
 
+**Si todo va bien**, el proceso de trabajo en general es:
+  ```mermaid
+    stateDiagram-v2
+    direction LR
+    state "Editor"                  as s_edit
+    state "Compilador"              as s_cc
+    state "Ejecutar"                as s_exe
+
+   [*]        --> s_edit:   editar   ->\n gedit main.c
+    s_edit    --> s_cc:     compilar ->\n gcc -o main ...
+    s_cc      --> s_exe:    ejecutar ->\n ./main
+  ``` 
+
 Como ejemplo para compilar, usaremos el siguiente archivo:
 * main.c
   ```c
@@ -25,7 +38,7 @@ Como ejemplo para compilar, usaremos el siguiente archivo:
   
   int main ( int argc, char *argv[] )
   {
-     printf("Hola mundo...\n") ;
+     printf("Hola mundo... %d\n", argc) ;
      return 0 ;
   }
   ```
@@ -37,7 +50,13 @@ gcc -g -Wall -c main.c -o main.o
 gcc -g -Wall -o main      main.o
 ```
 
-Aclaraciones:
+Para ejecutar usaremos:
+
+```bash
+./main
+```
+
+Aclaraciones a la hora de compilar:
 * A la hora de compilar se utiliza los siguientes modificadores (flags):
   * "-g" para añadir información de depuración que es útil si se usa un depurador
   * "-Wall" para que muestre todas las advertencias (Warnings) de posibles problemas que detecte el compilador
@@ -45,11 +64,38 @@ Aclaraciones:
   * "-Werror" para indicar que trate todas las advertencias (warnings) como errores.
   * "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
 
-Para ejecutar usaremos:
 
-```bash
-./main
-```
+La premisa es que todo vaya bien y no haya problemas.
+Pero nuestro trabajo incluye tratar con problemas para resolverlos de la mejor forma posible.
+Los problemas habituales aparecen:
+* A la hora de compilar: errores de compilación por sintáxis incorrecta del archivo fuente .c
+* A la hora de ejecutar: errores de ejecución porque el comportamiento esperado no es igual al comportamiento real.
+  
+El proceso de trabajo en general incluyendo el tratamiento de problemas sería en general:
+  ```mermaid
+    stateDiagram-v2
+    direction LR
+    state "Editor"       as s_edit
+    state "Compilador"   as s_cc
+    state "Ejecutar"     as s_exe
+    state "Depurador"    as s_dbg
+
+    s_edit    --> s_cc:     compilar
+    s_cc      --> s_edit:   problema al compilar
+    s_cc      --> s_exe:    ejecutar
+    s_exe     --> s_edit:   problema detectado al ejecutar
+    s_exe     --> s_dbg:    problema al ejecutar
+    s_dbg     --> s_edit:   problema detectado al depurar
+  ``` 
+
+Para depurar podemos usar dos técnicas:
+* "Fuerza bruta" con mensajes de impresión:
+  * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
+  * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
+* Algún depurador (kdbg, ddd, gdb, ...):
+  ```bash
+  ddd ./main
+  ```
 
 
 
