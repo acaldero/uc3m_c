@@ -1,6 +1,6 @@
 # Mini-laboratorio de lenguaje C
 
-### Materiales usados en ARCOS.INF.UC3M.ES con Licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/) 
+### Materiales usados en ARCOS.INF.UC3M.ES con Licencia [CC BY-NC 4.0](http://creativecommons.org/licenses/by-nc/4.0/)
 
 
 ## Requisitos
@@ -30,16 +30,20 @@ El lenguaje C estándar es compilado (y no interpretado como Python) por lo que 
     s_edit    --> s_cc:     compilar ->\n  gcc -o main ...
     s_cc      --> s_exe:    ejecutar ->\n  ./main
     s_exe     --> [*]:      ejecución\n correcta
-  ``` 
+  ```
 
 Como ejemplo usaremos el siguiente archivo:
 * main.c
   ```c
   #include <stdio.h>
-  
+
   int main ( int argc, char *argv[] )
   {
-     printf("Hola mundo... %d\n", argc) ;
+     printf("Hola mundo... %d\n",
+     /*                     ^           */
+     /*                     |           */
+                           argc) ;
+
      return 0 ;
   }
   ```
@@ -78,7 +82,7 @@ Los problemas habituales aparecen:
 * A la hora de compilar: errores de compilación por sintáxis incorrecta del archivo fuente .c
   * <details>
       <summary>Recomendaciones para depurar problemas de compilación... (hacer click)</summary>
-  
+
     * Tratar de solucionar primero el primer error que aparece y luego volver a compilar (hay errores dependientes de otros)
     * Leer bien los mensajes de error del compilador, buscando entender qué problema indica el compilador:
       * Buscar primero en la línea indicada en el compilador...
@@ -87,11 +91,11 @@ Los problemas habituales aparecen:
 * A la hora de ejecutar: errores de ejecución porque el comportamiento esperado no es igual al comportamiento real.
   * <details>
       <summary>Recomendaciones para depurar problemas de ejecución... (hacer click)</summary>
-  
+
       * El uso de "fuerza bruta" con mensajes de impresión (programas pequeños y/o uso de hilos):
         * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
         * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
-      * El uso de algún depurador (kdbg, ddd, gdb, ...) 
+      * El uso de algún depurador (kdbg, ddd, gdb, ...)
       * Realizar programación "defensiva": desde el principio añadir todas las comprobaciones y mensajes de impresión posibles (luego se comentan los que no sea necesario)
     </details>
 
@@ -112,11 +116,11 @@ El proceso de trabajo en general incluyendo el tratamiento de problemas sería e
     s_exe     --> s_dbg:    problema al ejecutar
     s_dbg     --> s_edit:   problema detectado al depurar
     s_exe     --> [*]:      ejecución correcta
-  ``` 
+  ```
 
 <details>
   <summary>Depurar con ddd... (hacer click)</summary>
-  
+
 Para depurar con ddd ha de ejecutar:
 ```bash
 ddd ./main &
@@ -139,7 +143,7 @@ Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguient
 * main.c
   ```c
   #include <stdio.h>
-  
+
   int main ( int argc, char *argv[] )
   {
      int i ;
@@ -167,7 +171,7 @@ Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguient
 Recordatorios:
 * <details>
   <summary>De "alternar" entre opciones en C... (hacer click)</summary>
-  
+
   * if-then-else:
     ```c
     if ("condición cierta o falsa")  // 0 es falso y resto es verdadero
@@ -182,7 +186,7 @@ Recordatorios:
   </details>
 * <details>
   <summary>Para "iterar" en C... (hacer click)</summary>
-  
+
   * for (de 0 a n veces):
     ```c
     for ("valores iniciales de contadores"; "condición de mantenimiento en el bucle"; "actualización de contadores")
@@ -192,7 +196,7 @@ Recordatorios:
     ```
   * while (de 0 a n veces):
     ```c
-    "valores iniciales de contadores"; 
+    "valores iniciales de contadores";
     while ("condición de mantenimiento en el bucle")
     {
       ...
@@ -201,7 +205,7 @@ Recordatorios:
     ```
   * do-while (de 1 a n veces):
     ```c
-    "valores iniciales de contadores"; 
+    "valores iniciales de contadores";
     do
     {
       ...
@@ -233,7 +237,7 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
   } ;
 
   struct dni personas[N_PERSONAS] ;
-  
+
   int main ( int argc, char *argv[] )
   {
      int i ;
@@ -242,18 +246,17 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
      for (i=0; i<N_PERSONAS; i++)
      {
         personas[i].id = i ;
-        sprintf(personas[i].nombre, "persona %d", personas[i].id) ;
+        sprintf(personas[i].nombre,  /* cadena destino */
+               "persona %d",         /* formato */
+               personas[i].id) ;     /* %d */
      }
 
      /* Imprimir personas */
      for (i=0; i<N_PERSONAS; i++)
      {
-        printf(" * Persona '%s' que tiene un id '%d'.\n", 
-        /*                  ^                    ^         */
-        /*                  |                    |         */
-                           personas[i].nombre,
-        /*                                       |         */                           
-                                                 personas[i].id) ;
+        printf(" * Persona '%s' que tiene un id '%d'.\n",
+               personas[i].nombre,
+               personas[i].id) ;
      }
 
      return 0 ;
@@ -261,7 +264,25 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
   ```
 
 Aclaraciones:
-* En Lenguaje C al definir un array, solo su nombre (sin corchetes []) representa la dirección de memoria del primer elemento (una dirección de memoria constante que apunta a un elemento variable).
+* Sobre arrays:
+  * Al usar un array con solo su nombre (sin corchetes []) tendremos la dirección de memoria del primer elemento
+    * Es una dirección de memoria constante (determinada en tiempo de compilación) que apunta a un elemento variable (en tiempo de ejecución puede cambiar).
+  * No hay un tipo string ya incluido en C pero podemos usar un array de caracteres para representar un string de una longitud máxima prefijada en compilación:
+    ```c
+    char string1[128]; // string de 127 caracteres más caracter fin de cadena (caracter '\0') para indicar el último
+
+    strcpy(string1, "Hola mundo") ;
+    ```
+* Sobre structs:
+  * Al definir un tipo estructura con ```struct nombre-de-tipo-estructura``` "siempre" tenemos que usar la palabra struct en el nombre del tipo para definir variables: ```struct nombre-de-tipo-estructura variable```
+  * Es posible crear un tipo nuevo de datos a partir de otros con typedef:
+    ```c
+    typedef   struct dni     dni_t ;
+    dni_t personas[N_PERSONAS] ;
+
+    typedef   struct dni     cien_personas[100] ;
+    cien_personas  personal ;
+    ```
 
 **Información recomendada**:
 * [Array y Struct en C (youtube)](http://www.youtube.com/watch?embed=no&v=o5Jl_Dzga88&feature=related)
@@ -344,66 +365,52 @@ Como ejemplo de uso de punteros para memoria dinámica, usaremos el siguiente ar
 
   int main ( int argc, char *argv[] )
   {
-      /* 
-       * Definir variables
+      /*
+       * Array estático
        */
 
-      /* Array estático (de tamaño fijo, en tiempo de compilación) */
+      /* Definir array estático (de tamaño fijo, en tiempo de compilación) */
       int  earray[5]  = { 1, 2, 3, 4, 5 } ;
 
-      /* Array dinámico (tamaño variable fijado en ejecución) */
-      int *darray  = NULL ;
-      int  n_eltos = 0 ;
+      /* Modificar valor de variables */
+        earray[0] = 1 ;   earray[1] = 2 ;   earray[2] = 3 ;   earray[3] = 4 ;   earray[4] = 5 ;
+      *(earray+0) = 1 ; *(earray+1) = 2 ; *(earray+2) = 3 ; *(earray+3) = 4 ; *(earray+4) = 5 ;
 
-
-      /*
-       * Modificar valor de variables
-       */
-      earray[0] = 1 ;
-      earray[1] = 2 ;
-      earray[2] = 3 ;
-      earray[3] = 4 ;
-      earray[4] = 5 ;
   /* CUIDADO:
       earray[5] = 5 ;  !!  fuera de rango
   */
 
-      // <- en este punto de ejecución:
-      //    * darray  vale NULL
-      //    * n_eltos vale cero
+      /* Consultar valor de variables */
+      printf("Estático:\n") ;
+      imprimir(earray, 5) ;
 
-      /* a) vamos a pedir memoria para 2 enteros */
-      n_eltos = 2 ;  // <- en un futuro en lugar de 2 se pasará por argc/argv el número...
-      darray = malloc(n_eltos * sizeof(int)) ;
 
-      /* b) vamos a comprobar que malloc NO ha devuelto NULL */
-      if (NULL == darray) {
-          perror("malloc ha fallado: ") ;
-          exit(-1) ;
-      }
+      /*
+       * Array dinámico
+       */
 
-      // <- en este punto de ejecución:
-      //    * darray  vale aquí la posición de memoria donde hay espacio para guardar 2 enteros
-      //    * n_eltos vale 2 aquí
+      /* Definir array dinámico (tamaño variable fijado en ejecución) */
+      int *darray  = NULL ;
+      int  n_eltos = 0 ;
 
-      /* c) se da valores a la memoria dinámica pedida */
-      darray[0] = 1 ;
-      darray[1] = 2 ;
+            /* a) vamos a pedir memoria para 2 enteros... */
+            n_eltos = 2 ;
+            darray  = malloc(n_eltos * sizeof(int)) ;
+            if (NULL == darray) {
+                perror("malloc ha fallado: ") ;
+                exit(-1) ;
+            }
+
+      /* Modificar valor de variables */
+        darray[0] = 1 ;   darray[1] = 2 ;
+      *(darray+0) = 1 ; *(darray+1) = 2 ;
 
   /* CUIDADO:
       darray    = 1 ;  !!  darray almacena la dirección 0x1 de memoria pero no se guarda 1 en el primer elemento
       darray[2] = 3 ;  !!  fuera de rango
   */
 
-
-      /* 
-       * Consultar valor de variables
-       */
-
-      printf("Estático:\n") ;
-      imprimir(earray, 5) ;
-
-      /* d) se lee los valores de la memoria dinámica */
+      /* Consultar valor de variables */
       printf("Dinámico:\n") ;
       imprimir(darray,  n_eltos) ;
 
@@ -411,9 +418,10 @@ Como ejemplo de uso de punteros para memoria dinámica, usaremos el siguiente ar
       imprimir(&darray, n_eltos) ;  !! dirección de la variable que guarda la dirección del primer elemento...
   */
 
-      /* e) se libera la memoria cuando ya NO sea necesario volver a usarse */
-      free(darray) ;
-      darray = NULL ;
+            /* b) se libera la memoria cuando ya NO sea necesario volver a usarse */
+            free(darray) ;
+            darray  = NULL ;
+            n_eltos = 0 ;
 
       return 0 ;
   }
@@ -603,17 +611,17 @@ Como ejemplo usaremos estos tres archivos:
   ```c
   #ifndef LIB_HOLA
   #define LIB_HOLA
-  
+
       void di_hola ( void ) ;
-      
+
   #endif
   ```
 
 * lib_hola.c
   ```c
   #include "lib_hola.h"
-  
-  void di_hola ( void ) 
+
+  void di_hola ( void )
   {
      printf("Hola Mundo...\n") ;
   }
@@ -622,16 +630,16 @@ Como ejemplo usaremos estos tres archivos:
 * main.c
   ```c
   #include "lib_hola.h"
-  
+
   int main ( int argc, char *argv[] )
   {
      di_hola() ;
-     
+
      return 0 ;
   }
   ```
-  
-  
+
+
 Para compilar los anteriores archivos hay que ejecutar:
 
 ```bash
