@@ -266,10 +266,11 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
 Aclaraciones:
 * Sobre arrays:
   * Al usar un array con solo su nombre (sin corchetes []) tendremos la dirección de memoria del primer elemento
+    * array == &(array[0])
     * Es una dirección de memoria constante (determinada en tiempo de compilación) que apunta a un elemento variable (en tiempo de ejecución puede cambiar).
   * No hay un tipo string ya incluido en C pero podemos usar un array de caracteres para representar un string de una longitud máxima prefijada en compilación:
     ```c
-    char string1[128]; // string de 127 caracteres más caracter fin de cadena (caracter '\0') para indicar el último
+    char string1[128]; // string de hasta 127 caracteres más caracter fin de cadena ('\0') para indicar el último
 
     strcpy(string1, "Hola mundo") ;
     ```
@@ -277,11 +278,13 @@ Aclaraciones:
   * Al definir un tipo estructura con ```struct nombre-de-tipo-estructura``` "siempre" tenemos que usar la palabra struct en el nombre del tipo para definir variables: ```struct nombre-de-tipo-estructura variable```
   * Es posible crear un tipo nuevo de datos a partir de otros con typedef:
     ```c
-    typedef   struct dni     dni_t ;
-    dni_t personas[N_PERSONAS] ;
-
     typedef   struct dni     cien_personas[100] ;
     cien_personas  personal ;
+    ```
+  * Es posible no tener que usar "struct" siempre al crear un tipo nuevo de datos con typedef:
+    ```c
+    typedef   struct dni     dni_t ;
+    dni_t personas[N_PERSONAS] ;
     ```
 
 **Información recomendada**:
@@ -435,17 +438,18 @@ En este ejemplo:
   * El array dinámico se implementa con dos elementos: un entero con el tamaño del array (en elementos o bytes) y un puntero al primer elemento (el resto están a continuación).
   * En tiempo de ejecución se reserva espacio (malloc) y luego se puede usar como un array estático (usando los corchetes y el índice del elemento a acceder).
 
-A recordar:
-* En C hay que llevar la contabilidad de los punteros al usarlos: que en todo momento la dirección sea válida y apunte a un espacio de memoria que se ha reservado previamente (en compilación o ejecución).
-* En Lenguaje C al definir un array estático, solo su nombre (sin corchetes []) representa la dirección de memoria del primer elemento (una dirección de memoria constante).
+A recordar en C:
+* **Hay que llevar la contabilidad de los punteros al usarlos**:
+  * **Dirección**: ¿es válida?
+  * **Espacio apuntado**: ¿se ha reservado previamente (en compilación o ejecución)?
 * Estados en el uso recomendado de un puntero:
   ```mermaid
     stateDiagram-v2
-    direction LR
-    state "px=¿?"              as px_xx
-    state "px=NULL"            as px_null
-    state "px=&x"              as px_atx
-    state "px=malloc(size)"    as px_alloc
+    direction TB
+    state "px==¿?"             as px_xx
+    state "px==NULL"           as px_null
+    state "px==&x"             as px_atx
+    state "px -> alloc(size)"  as px_alloc
 
     px_xx     --> px_null:  px = NULL
     px_null   --> px_atx:   px = &x
