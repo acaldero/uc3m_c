@@ -26,7 +26,7 @@ El lenguaje C estándar es compilado (y no interpretado como Python) por lo que 
     state "Compilador"              as s_cc
     state "Ejecutar"                as s_exe
 
-   [*]        --> s_edit:   editar   ->\n  gedit main.c
+    [*]       --> s_edit:   editar   ->\n  gedit main.c
     s_edit    --> s_cc:     compilar ->\n  gcc -o main ...
     s_cc      --> s_exe:    ejecutar ->\n  ./main
     s_exe     --> [*]:      ejecución\n correcta
@@ -51,19 +51,23 @@ gcc -g -Wall -c main.c -o main.o
 gcc -g -Wall -o main      main.o
 ```
 
+* <details>
+    <summary>Sobre -g, -Wall, ... (hacer click)</summary>
+
+   * A la hora de compilar se utiliza los siguientes modificadores (flags):
+     * "-g" para añadir información de depuración que es útil si se usa un depurador
+     * "-Wall" para que muestre todas las advertencias (Warnings) de posibles problemas que detecte el compilador
+   * Se podría usar también:
+     * "-Werror" para indicar que trate todas las advertencias (warnings) como errores.
+     * "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
+
+  </details>
+
 Para ejecutar usaremos:
 
 ```bash
 ./main
 ```
-
-Aclaraciones a la hora de compilar:
-* A la hora de compilar se utiliza los siguientes modificadores (flags):
-  * "-g" para añadir información de depuración que es útil si se usa un depurador
-  * "-Wall" para que muestre todas las advertencias (Warnings) de posibles problemas que detecte el compilador
-* Se podría usar también:
-  * "-Werror" para indicar que trate todas las advertencias (warnings) como errores.
-  * "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
 
 
 ### 1.1 Y si hay problemas... depuramos
@@ -72,43 +76,64 @@ La premisa es que todo vaya bien y no haya problemas.
 Pero nuestro trabajo incluye tratar con problemas para resolverlos de la mejor forma posible.
 Los problemas habituales aparecen:
 * A la hora de compilar: errores de compilación por sintáxis incorrecta del archivo fuente .c
-* A la hora de ejecutar: errores de ejecución porque el comportamiento esperado no es igual al comportamiento real.
+  * <details>
+      <summary>Recomendaciones para depurar problemas de compilación... (hacer click)</summary>
   
+    * Tratar de solucionar primero el primer error que aparece y luego volver a compilar (hay errores dependientes de otros)
+    * Leer bien los mensajes de error del compilador, buscando entender qué problema indica el compilador:
+      * Buscar primero en la línea indicada en el compilador...
+      * ...es posible que haya un error en el código en la línea X que se manifieste para el compilador como otro error y en líneas posteriores
+    </details>
+* A la hora de ejecutar: errores de ejecución porque el comportamiento esperado no es igual al comportamiento real.
+  * <details>
+      <summary>Recomendaciones para depurar problemas de ejecución... (hacer click)</summary>
+  
+      * El uso de "fuerza bruta" con mensajes de impresión (programas pequeños y/o uso de hilos):
+        * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
+        * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
+      * El uso de algún depurador (kdbg, ddd, gdb, ...) 
+      * Realizar programación "defensiva": desde el principio añadir todas las comprobaciones y mensajes de impresión posibles (luego se comentan los que no sea necesario)
+    </details>
+
 El proceso de trabajo en general incluyendo el tratamiento de problemas sería en general:
   ```mermaid
     stateDiagram-v2
-    direction LR
+    direction TB
     state "Editor"       as s_edit
     state "Compilador"   as s_cc
     state "Ejecutar"     as s_exe
     state "Depurador"    as s_dbg
 
+    [*]       --> s_edit
     s_edit    --> s_cc:     compilar
     s_cc      --> s_edit:   problema al compilar
     s_cc      --> s_exe:    ejecutar
     s_exe     --> s_edit:   problema detectado al ejecutar
     s_exe     --> s_dbg:    problema al ejecutar
     s_dbg     --> s_edit:   problema detectado al depurar
+    s_exe     --> [*]:      ejecución correcta
   ``` 
 
-Para depurar los problemas de compilación es importante:
-* Tratar de solucionar primero el primer error que aparece y luego volver a compilar (hay errores dependientes de otros)
-* Leer bien los mensajes de error del compilador, buscando entender qué problema indica el compilador:
-  * Buscar primero en la línea indicada en el compilador...
-  * ...es posible que haya un error en el código en la línea X que se manifieste para el compilador como otro error y en líneas posteriores
+<details>
+  <summary>Depurar con ddd... (hacer click)</summary>
+  
+Para depurar con ddd ha de ejecutar:
+```bash
+ddd ./main &
+```
 
-Para depurar los problemas de ejecución podemos usar dos técnicas:
-* "Fuerza bruta" con mensajes de impresión:
-  * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
-  * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
-* Algún depurador (kdbg, ddd, gdb, ...):
-  ```bash
-  ddd ./main
-  ```
+La aplicación ddd es una interfaz gráfica sobre el depurador gdb de línea de mandatos, facilitando su uso:
+
+![DDD | main](./images/ddd-1.jpg)
+
+</details>
 
 
 
 ## 2.- Sentencias de control de flujo en C
+
+NOTA: gracias a José Antonio por el siguiente ejemplo:
+* Iterar de 1 a 100 y si el número es múltiplo de 3, escribir "Fizz"; si es múltiplo de 5, "Buzz"; y si es múltiplo de 3 y 5, "FizzBuzz".
 
 Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguiente archivo:
 * main.c
@@ -118,34 +143,31 @@ Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguient
   int main ( int argc, char *argv[] )
   {
      int i ;
-     int print_intro ;
 
      for (i=0; i<100; i++)
      {
-        print_intro = 0 ;
         printf("%d -> ", i) ;
 
         if ((i % 3) == 0)
         {
             printf("Fizz") ;
-            print_intro = 1 ;
         }
         if ((i % 5) == 0)
         {
             printf("Buzz") ;
-            print_intro = 1 ;
         }
 
-        if (print_intro)
-            printf("\n") ;
+        printf("\n") ;
      }
 
      return 0 ;
   }
   ```
 
-Aclaraciones:
-* Hay que recordar para "alternar" entre opciones se puede usar:
+Recordatorios:
+* <details>
+  <summary>De "alternar" entre opciones en C... (hacer click)</summary>
+  
   * if-then-else:
     ```c
     if ("condición cierta o falsa")  // 0 es falso y resto es verdadero
@@ -157,7 +179,10 @@ Aclaraciones:
       "si es falsa..."
     }
     ```
-* Hay que recordar para "iterar" en un bucle se puede usar:
+  </details>
+* <details>
+  <summary>Para "iterar" en C... (hacer click)</summary>
+  
   * for (de 0 a n veces):
     ```c
     for ("valores iniciales de contadores"; "condición de mantenimiento en el bucle"; "actualización de contadores")
@@ -184,6 +209,8 @@ Aclaraciones:
     }
     while ("condición de mantenimiento en el bucle")
     ```
+</details>
+
 
 **Información recomendada**:
   * [Sentencias de control (youtube)](http://www.youtube.com/watch?embed=no&v=ux_J98WmjPA&feature=related)
@@ -198,7 +225,7 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
   #include <stdio.h>
   #include <stdlib.h>
 
-  #define N_PERSONAS 100
+  #define N_PERSONAS 10
 
   struct dni {
      int  id ;
@@ -214,8 +241,8 @@ Como ejemplo de (array de) structs, usaremos el siguiente archivo:
      /* Rellenar personas con valores por defecto (persona 0,1...) */
      for (i=0; i<N_PERSONAS; i++)
      {
-        sprintf("persona %d", personas[i].nombre, personas[i].id) ;
         personas[i].id = i ;
+        sprintf(personas[i].nombre, "persona %d", personas[i].id) ;
      }
 
      /* Imprimir personas */
@@ -273,7 +300,7 @@ Como ejemplo inicial de qué representa un puntero en C, usaremos el siguiente a
       // Una variable puntero es un variable que guarda la dirección de una posición de memoria,
       // se parece mucho a una variable del tipo "unsigned long int"
       printf(" pi = %x\n",  pi) ;
-      printf(" &i = %d\n",  &i) ; /* (4) */
+      printf(" &i = %x\n",  &i) ; /* (4) */
       // Una variable puntero a su vez se guarda en una posición de memoria
       // (se puede aplicar el operador & para conocer dicha dirección)
       printf("&pi = %x\n", &pi) ; /* (4) */
@@ -285,10 +312,10 @@ Como ejemplo inicial de qué representa un puntero en C, usaremos el siguiente a
 A recordar:
 * El uso de los operadores "&" y "*" depende del contexto:
 
-| contexto             |   *                |   &                  |
-|:--------------------:|:------------------:|:--------------------:|
-| definición variable  | (1) puntero a...   | (2) referencia a...  |
-| uso de variable      | (3) acceder a...   | (4) dirección de...  |
+  | contexto/operador    |   *                |   &                  |
+  |:--------------------:|:------------------:|:--------------------:|
+  | definición variable  | (1) puntero a...   | (2) referencia a...  |
+  | uso de variable      | (3) acceder a...   | (4) dirección de...  |
 
 **Información recomendada**:
 * [Introducción a punteros  I (youtube)](http://www.youtube.com/watch?embed=no&v=iQF-2vUNEJk&feature=related)
