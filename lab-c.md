@@ -26,12 +26,13 @@ El lenguaje C estándar es compilado (y no interpretado como Python) por lo que 
     state "Compilador"              as s_cc
     state "Ejecutar"                as s_exe
 
-   [*]        --> s_edit:   editar   ->\n gedit main.c
-    s_edit    --> s_cc:     compilar ->\n gcc -o main ...
-    s_cc      --> s_exe:    ejecutar ->\n ./main
+   [*]        --> s_edit:   editar   ->\n  gedit main.c
+    s_edit    --> s_cc:     compilar ->\n  gcc -o main ...
+    s_cc      --> s_exe:    ejecutar ->\n  ./main
+    s_exe     --> [*]:      ejecución\n correcta
   ``` 
 
-Como ejemplo para compilar, usaremos el siguiente archivo:
+Como ejemplo usaremos el siguiente archivo:
 * main.c
   ```c
   #include <stdio.h>
@@ -65,6 +66,8 @@ Aclaraciones a la hora de compilar:
   * "-std=c90 -pedantic" para indicar que use el estándar de C versión 90 de forma extricta sin extensiones de GNU adicionales.
 
 
+### 1.1 Y si hay problemas... depuramos
+
 La premisa es que todo vaya bien y no haya problemas.
 Pero nuestro trabajo incluye tratar con problemas para resolverlos de la mejor forma posible.
 Los problemas habituales aparecen:
@@ -88,7 +91,13 @@ El proceso de trabajo en general incluyendo el tratamiento de problemas sería e
     s_dbg     --> s_edit:   problema detectado al depurar
   ``` 
 
-Para depurar podemos usar dos técnicas:
+Para depurar los problemas de compilación es importante:
+* Tratar de solucionar primero el primer error que aparece y luego volver a compilar (hay errores dependientes de otros)
+* Leer bien los mensajes de error del compilador, buscando entender qué problema indica el compilador:
+  * Buscar primero en la línea indicada en el compilador...
+  * ...es posible que haya un error en el código en la línea X que se manifieste para el compilador como otro error y en líneas posteriores
+
+Para depurar los problemas de ejecución podemos usar dos técnicas:
 * "Fuerza bruta" con mensajes de impresión:
   * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
   * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
