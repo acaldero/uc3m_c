@@ -6,12 +6,10 @@
 ## Requisitos
 
 Los principales requisitos son:
-* Tener acceso a una máquina con Linux
-* Tener conexión a Internet
-
-Para tener acceso a una máquina con Linux se recuerda que el Laboratorio del Departamento de Informática ofrece unas Aulas Virtuales en:
-* ["https://www.lab.inf.uc3m.es/servicios/aulas-virtuales-del-laboratorio/](https://www.lab.inf.uc3m.es/servicios/aulas-virtuales-del-laboratorio/)
-
+* Tener acceso a una máquina con Linux -> se recuerda que el Laboratorio del Departamento de Informática ofrece unas Aulas Virtuales en:
+  * ["https://www.lab.inf.uc3m.es/servicios/aulas-virtuales-del-laboratorio/](https://www.lab.inf.uc3m.es/servicios/aulas-virtuales-del-laboratorio/)
+* Tener conexión a Internet para consultar documentación e instalar software que sea preciso:
+  * sudo apt-get install build-essential ddd gdb
 
 
 ## 1.- Proceso de compilación
@@ -96,7 +94,7 @@ Los problemas habituales aparecen:
         * Mensaje de los puntos por dónde pasa la ejecución: ```printf("Aquí 1\n"); ... printf("Aquí 2\n"); ...```
         * Mensaje de qué estado tienen las variables entre dos puntos anteriores: ```printf("variable: %d\n", valor_int); ....```
       * El uso de algún depurador (kdbg, ddd, gdb, ...)
-      * Realizar programación "defensiva": desde el principio añadir todas las comprobaciones y mensajes de impresión posibles (luego se comentan los que no sea necesario)
+      * Realizar programación "defensiva": desde el principio añadir todas las comprobaciones y mensajes de impresión posibles 
     </details>
 
 El proceso de trabajo en general incluyendo el tratamiento de problemas sería en general:
@@ -136,9 +134,6 @@ La aplicación ddd es una interfaz gráfica sobre el depurador gdb de línea de 
 
 ## 2.- Sentencias de control de flujo en C
 
-NOTA: gracias a José Antonio por el siguiente ejemplo:
-* Iterar de 1 a 100 y si el número es múltiplo de 3, escribir "Fizz"; si es múltiplo de 5, "Buzz"; y si es múltiplo de 3 y 5, "FizzBuzz".
-
 Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguiente archivo:
 * main.c
   ```c
@@ -148,25 +143,27 @@ Como ejemplo de uso de sentencias de control de flujo en C, usaremos el siguient
   {
      int i ;
 
-     for (i=0; i<100; i++)
+     if (NULL == argv)  {
+         printf("argv is NULL 🦖\n") ;
+     }
+
+     for (i=0; i<argc; i++)
      {
-        printf("%d -> ", i) ;
-
-        if ((i % 3) == 0)
-        {
-            printf("Fizz") ;
-        }
-        if ((i % 5) == 0)
-        {
-            printf("Buzz") ;
-        }
-
-        printf("\n") ;
+        printf(" argv[%d] -> %s\n", i, argv[i]) ;
      }
 
      return 0 ;
   }
   ```
+  
+Este ejemplo permite imprimir los argumentos con los que se invoca un programa.
+
+```bash
+gcc -g -Wall -c main.c -o main.o
+gcc -g -Wall -o main      main.o
+
+./main uno dos tres
+```
 
 Recordatorios:
 * <details>
@@ -214,6 +211,42 @@ Recordatorios:
     while ("condición de mantenimiento en el bucle")
     ```
 </details>
+
+
+NOTA: gracias a José Antonio por el siguiente ejercicio:
+* Iterar de 1 a 100 y si el número es múltiplo de 3, escribir "Fizz"; si es múltiplo de 5, "Buzz"; y si es múltiplo de 3 y 5, "FizzBuzz".
+
+* <details>
+  <summary>Posible implementación... (hacer click)</summary>
+
+  ```c
+  #include <stdio.h>
+
+  int main ( int argc, char *argv[] )
+  {
+     int i ;
+
+     for (i=0; i<100; i++)
+     {
+        printf("%d -> ", i) ;
+
+        if ((i % 3) == 0)
+        {
+            printf("Fizz") ;
+        }
+        if ((i % 5) == 0)
+        {
+            printf("Buzz") ;
+        }
+
+        printf("\n") ;
+     }
+
+     return 0 ;
+  }
+  ```
+
+  </details>
 
 
 **Información recomendada**:
