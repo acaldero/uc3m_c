@@ -118,18 +118,37 @@ El proceso de trabajo en general incluyendo el tratamiento de problemas sería e
 
 <details>
   <summary>Depurar con ddd... (hacer click)</summary>
+<br>
 
-Para depurar con ddd ha de ejecutar:
-```bash
-ddd ./main &
-```
+ * Para depurar con ddd ha de ejecutar:
+   ```bash
+   ddd ./main &
+   ```
 
-La aplicación ddd es una interfaz gráfica sobre el depurador gdb de línea de mandatos, facilitando su uso:
+ * La aplicación ddd es una interfaz gráfica sobre el depurador gdb de línea de mandatos, facilitando su uso:
+  ![DDD | main](./images/ddd-1.jpg)
 
-![DDD | main](./images/ddd-1.jpg)
-
+ * Se puede instalar en Debian/Ubuntu mediante:
+   ```bash
+   sudo apt-get install ddd
+   ```
+ 
 </details>
 
+
+<details>
+  <summary>Depurar con seer... (hacer click)</summary>
+<br>
+ 
+ * NOTA: aprovecho para agradecer a Adolfo la información de seer así como recomendar su uso
+ 
+ * Seer está disponible en:
+   https://github.com/epasveer/seer 
+
+ * Seer es una interfaz gráfica para gdb en Linux:
+   ![seer | main](https://raw.githubusercontent.com/epasveer/seer/main/images/mainview.png)
+
+</details>
 
 
 ## 2.- Sentencias de control de flujo en C
